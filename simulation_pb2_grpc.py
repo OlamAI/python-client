@@ -14,30 +14,45 @@ class SimulationStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.SpawnAgent = channel.unary_unary(
-        '/pb.Simulation/SpawnAgent',
-        request_serializer=simulation__pb2.SpawnAgentRequest.SerializeToString,
-        response_deserializer=simulation__pb2.SpawnAgentResult.FromString,
+    self.CreateAgent = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/CreateAgent',
+        request_serializer=simulation__pb2.CreateAgentRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Agent.FromString,
         )
-    self.AgentObservation = channel.unary_unary(
-        '/pb.Simulation/AgentObservation',
-        request_serializer=simulation__pb2.AgentObservationRequest.SerializeToString,
-        response_deserializer=simulation__pb2.AgentObservationResult.FromString,
+    self.GetAgent = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/GetAgent',
+        request_serializer=simulation__pb2.GetAgentRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Agent.FromString,
         )
-    self.AgentAction = channel.unary_unary(
-        '/pb.Simulation/AgentAction',
-        request_serializer=simulation__pb2.AgentActionRequest.SerializeToString,
-        response_deserializer=simulation__pb2.AgentActionResult.FromString,
+    self.DeleteAgent = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/DeleteAgent',
+        request_serializer=simulation__pb2.DeleteAgentRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Empty.FromString,
+        )
+    self.ActionAgent = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/ActionAgent',
+        request_serializer=simulation__pb2.ActionAgentRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Empty.FromString,
+        )
+    self.GetObservation = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/GetObservation',
+        request_serializer=simulation__pb2.GetObservationRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Observation.FromString,
+        )
+    self.CreateSpectator = channel.unary_stream(
+        '/olamai.endpoints.simulation.Simulation/CreateSpectator',
+        request_serializer=simulation__pb2.CreateSpectatorRequest.SerializeToString,
+        response_deserializer=simulation__pb2.CellUpdate.FromString,
+        )
+    self.SubscribeSpectator = channel.unary_unary(
+        '/olamai.endpoints.simulation.Simulation/SubscribeSpectator',
+        request_serializer=simulation__pb2.SubscribeSpectatorRequest.SerializeToString,
+        response_deserializer=simulation__pb2.Empty.FromString,
         )
     self.ResetWorld = channel.unary_unary(
-        '/pb.Simulation/ResetWorld',
-        request_serializer=simulation__pb2.ResetWorldRequest.SerializeToString,
-        response_deserializer=simulation__pb2.ResetWorldResult.FromString,
-        )
-    self.Spectate = channel.unary_stream(
-        '/pb.Simulation/Spectate',
-        request_serializer=simulation__pb2.SpectateRequest.SerializeToString,
-        response_deserializer=simulation__pb2.CellUpdate.FromString,
+        '/olamai.endpoints.simulation.Simulation/ResetWorld',
+        request_serializer=simulation__pb2.Empty.SerializeToString,
+        response_deserializer=simulation__pb2.Empty.FromString,
         )
 
 
@@ -45,39 +60,57 @@ class SimulationServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def SpawnAgent(self, request, context):
-    """--- DEV ONLY ---
-    Spawn a new agent
+  def CreateAgent(self, request, context):
+    """Creates a new agent
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentObservation(self, request, context):
-    """Request observation data from an agent
+  def GetAgent(self, request, context):
+    """Returns a specific agent
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def AgentAction(self, request, context):
-    """Perform an action on behalf of an agent
+  def DeleteAgent(self, request, context):
+    """Deletes an agent
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ActionAgent(self, request, context):
+    """Perform agent action
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetObservation(self, request, context):
+    """Returns a specific book.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateSpectator(self, request, context):
+    """Start a spectation stream
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SubscribeSpectator(self, request, context):
+    """Subscribe a spectator to a region
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ResetWorld(self, request, context):
-    """Perform an action on behalf of an agent
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def Spectate(self, request, context):
-    """--- END DEV ---
-
-    Spectate simulation
+    """Reset the world
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -86,32 +119,47 @@ class SimulationServicer(object):
 
 def add_SimulationServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'SpawnAgent': grpc.unary_unary_rpc_method_handler(
-          servicer.SpawnAgent,
-          request_deserializer=simulation__pb2.SpawnAgentRequest.FromString,
-          response_serializer=simulation__pb2.SpawnAgentResult.SerializeToString,
+      'CreateAgent': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateAgent,
+          request_deserializer=simulation__pb2.CreateAgentRequest.FromString,
+          response_serializer=simulation__pb2.Agent.SerializeToString,
       ),
-      'AgentObservation': grpc.unary_unary_rpc_method_handler(
-          servicer.AgentObservation,
-          request_deserializer=simulation__pb2.AgentObservationRequest.FromString,
-          response_serializer=simulation__pb2.AgentObservationResult.SerializeToString,
+      'GetAgent': grpc.unary_unary_rpc_method_handler(
+          servicer.GetAgent,
+          request_deserializer=simulation__pb2.GetAgentRequest.FromString,
+          response_serializer=simulation__pb2.Agent.SerializeToString,
       ),
-      'AgentAction': grpc.unary_unary_rpc_method_handler(
-          servicer.AgentAction,
-          request_deserializer=simulation__pb2.AgentActionRequest.FromString,
-          response_serializer=simulation__pb2.AgentActionResult.SerializeToString,
+      'DeleteAgent': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteAgent,
+          request_deserializer=simulation__pb2.DeleteAgentRequest.FromString,
+          response_serializer=simulation__pb2.Empty.SerializeToString,
+      ),
+      'ActionAgent': grpc.unary_unary_rpc_method_handler(
+          servicer.ActionAgent,
+          request_deserializer=simulation__pb2.ActionAgentRequest.FromString,
+          response_serializer=simulation__pb2.Empty.SerializeToString,
+      ),
+      'GetObservation': grpc.unary_unary_rpc_method_handler(
+          servicer.GetObservation,
+          request_deserializer=simulation__pb2.GetObservationRequest.FromString,
+          response_serializer=simulation__pb2.Observation.SerializeToString,
+      ),
+      'CreateSpectator': grpc.unary_stream_rpc_method_handler(
+          servicer.CreateSpectator,
+          request_deserializer=simulation__pb2.CreateSpectatorRequest.FromString,
+          response_serializer=simulation__pb2.CellUpdate.SerializeToString,
+      ),
+      'SubscribeSpectator': grpc.unary_unary_rpc_method_handler(
+          servicer.SubscribeSpectator,
+          request_deserializer=simulation__pb2.SubscribeSpectatorRequest.FromString,
+          response_serializer=simulation__pb2.Empty.SerializeToString,
       ),
       'ResetWorld': grpc.unary_unary_rpc_method_handler(
           servicer.ResetWorld,
-          request_deserializer=simulation__pb2.ResetWorldRequest.FromString,
-          response_serializer=simulation__pb2.ResetWorldResult.SerializeToString,
-      ),
-      'Spectate': grpc.unary_stream_rpc_method_handler(
-          servicer.Spectate,
-          request_deserializer=simulation__pb2.SpectateRequest.FromString,
-          response_serializer=simulation__pb2.CellUpdate.SerializeToString,
+          request_deserializer=simulation__pb2.Empty.FromString,
+          response_serializer=simulation__pb2.Empty.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'pb.Simulation', rpc_method_handlers)
+      'olamai.endpoints.simulation.Simulation', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

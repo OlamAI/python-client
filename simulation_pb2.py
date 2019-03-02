@@ -12,68 +12,70 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+import annotations_pb2 as annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='simulation.proto',
-  package='pb',
+  package='olamai.endpoints.simulation',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10simulation.proto\x12\x02pb\")\n\x11SpawnAgentRequest\x12\t\n\x01X\x18\x01 \x01(\x05\x12\t\n\x01Y\x18\x02 \x01(\x05\"\x1e\n\x10SpawnAgentResult\x12\n\n\x02Id\x18\x01 \x01(\t\"%\n\x17\x41gentObservationRequest\x12\n\n\x02Id\x18\x01 \x01(\t\"V\n\x16\x41gentObservationResult\x12\r\n\x05\x41live\x18\x01 \x01(\x08\x12\r\n\x05\x43\x65lls\x18\x02 \x03(\t\x12\x0e\n\x06\x45nergy\x18\x03 \x01(\x05\x12\x0e\n\x06Health\x18\x04 \x01(\x05\"C\n\x12\x41gentActionRequest\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x02 \x01(\t\x12\x11\n\tDirection\x18\x03 \x01(\t\"\'\n\x11\x41gentActionResult\x12\x12\n\nSuccessful\x18\x01 \x01(\x08\"\x13\n\x11ResetWorldRequest\"\x12\n\x10ResetWorldResult\"\x11\n\x0fSpectateRequest\"4\n\nCellUpdate\x12\t\n\x01X\x18\x01 \x01(\x05\x12\t\n\x01Y\x18\x02 \x01(\x05\x12\x10\n\x08Occupant\x18\x03 \x01(\t2\xca\x02\n\nSimulation\x12;\n\nSpawnAgent\x12\x15.pb.SpawnAgentRequest\x1a\x14.pb.SpawnAgentResult\"\x00\x12M\n\x10\x41gentObservation\x12\x1b.pb.AgentObservationRequest\x1a\x1a.pb.AgentObservationResult\"\x00\x12>\n\x0b\x41gentAction\x12\x16.pb.AgentActionRequest\x1a\x15.pb.AgentActionResult\"\x00\x12;\n\nResetWorld\x12\x15.pb.ResetWorldRequest\x1a\x14.pb.ResetWorldResult\"\x00\x12\x33\n\x08Spectate\x12\x13.pb.SpectateRequest\x1a\x0e.pb.CellUpdate\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10simulation.proto\x12\x1bolamai.endpoints.simulation\x1a\x11\x61nnotations.proto\"\x07\n\x05\x45mpty\")\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\"K\n\x0bObservation\x12\r\n\x05\x61live\x18\x01 \x01(\x08\x12\r\n\x05\x63\x65lls\x18\x02 \x03(\t\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x05\x12\x0e\n\x06health\x18\x04 \x01(\x05\"-\n\x06\x41\x63tion\x12\x10\n\x08\x61\x63tionId\x18\x01 \x01(\t\x12\x11\n\tdirection\x18\x02 \x01(\t\"4\n\nCellUpdate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x10\n\x08occupant\x18\x03 \x01(\t\"\x17\n\tSpectator\x12\n\n\x02id\x18\x01 \x01(\t\"\x1e\n\x06Region\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"G\n\x12\x43reateAgentRequest\x12\x31\n\x05\x61gent\x18\x01 \x01(\x0b\x32\".olamai.endpoints.simulation.Agent\" \n\x0fGetAgentRequest\x12\r\n\x05\x61gent\x18\x01 \x01(\t\"#\n\x12\x44\x65leteAgentRequest\x12\r\n\x05\x61gent\x18\x01 \x01(\t\"H\n\x12\x41\x63tionAgentRequest\x12\r\n\x05\x61gent\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63tionId\x18\x02 \x01(\t\x12\x11\n\tdirection\x18\x03 \x01(\t\"&\n\x15GetObservationRequest\x12\r\n\x05\x61gent\x18\x01 \x01(\t\"S\n\x16\x43reateSpectatorRequest\x12\x39\n\tspectator\x18\x01 \x01(\x0b\x32&.olamai.endpoints.simulation.Spectator\"c\n\x19SubscribeSpectatorRequest\x12\x11\n\tspectator\x18\x01 \x01(\t\x12\x33\n\x06region\x18\x02 \x01(\x0b\x32#.olamai.endpoints.simulation.Region2\xc1\x08\n\nSimulation\x12}\n\x0b\x43reateAgent\x12/.olamai.endpoints.simulation.CreateAgentRequest\x1a\".olamai.endpoints.simulation.Agent\"\x19\x82\xd3\xe4\x93\x02\x13\"\n/v1/agents:\x05\x61gent\x12x\n\x08GetAgent\x12,.olamai.endpoints.simulation.GetAgentRequest\x1a\".olamai.endpoints.simulation.Agent\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/agents/{agent}\x12~\n\x0b\x44\x65leteAgent\x12/.olamai.endpoints.simulation.DeleteAgentRequest\x1a\".olamai.endpoints.simulation.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/agents/{agent}\x12\x86\x01\n\x0b\x41\x63tionAgent\x12/.olamai.endpoints.simulation.ActionAgentRequest\x1a\".olamai.endpoints.simulation.Empty\"\"\x82\xd3\xe4\x93\x02\x1c\"\x12/v1/agents/{agent}:\x06\x61\x63tion\x12\x90\x01\n\x0eGetObservation\x12\x32.olamai.endpoints.simulation.GetObservationRequest\x1a(.olamai.endpoints.simulation.Observation\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/observations/{agent}\x12\x95\x01\n\x0f\x43reateSpectator\x12\x33.olamai.endpoints.simulation.CreateSpectatorRequest\x1a\'.olamai.endpoints.simulation.CellUpdate\"\"\x82\xd3\xe4\x93\x02\x1c\"\x0f/v1/spectators/:\tspectator0\x01\x12\x9c\x01\n\x12SubscribeSpectator\x12\x36.olamai.endpoints.simulation.SubscribeSpectatorRequest\x1a\".olamai.endpoints.simulation.Empty\"*\x82\xd3\xe4\x93\x02$\"\x1a/v1/spectators/{spectator}:\x06region\x12g\n\nResetWorld\x12\".olamai.endpoints.simulation.Empty\x1a\".olamai.endpoints.simulation.Empty\"\x11\x82\xd3\xe4\x93\x02\x0b*\t/v1/worldb\x06proto3')
+  ,
+  dependencies=[annotations__pb2.DESCRIPTOR,])
+
+
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='olamai.endpoints.simulation.Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=68,
+  serialized_end=75,
 )
 
 
-
-
-_SPAWNAGENTREQUEST = _descriptor.Descriptor(
-  name='SpawnAgentRequest',
-  full_name='pb.SpawnAgentRequest',
+_AGENT = _descriptor.Descriptor(
+  name='Agent',
+  full_name='olamai.endpoints.simulation.Agent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='X', full_name='pb.SpawnAgentRequest.X', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='id', full_name='olamai.endpoints.simulation.Agent.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Y', full_name='pb.SpawnAgentRequest.Y', index=1,
+      name='x', full_name='olamai.endpoints.simulation.Agent.x', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=24,
-  serialized_end=65,
-)
-
-
-_SPAWNAGENTRESULT = _descriptor.Descriptor(
-  name='SpawnAgentResult',
-  full_name='pb.SpawnAgentResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='Id', full_name='pb.SpawnAgentResult.Id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='y', full_name='olamai.endpoints.simulation.Agent.y', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -89,72 +91,41 @@ _SPAWNAGENTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=67,
-  serialized_end=97,
+  serialized_start=77,
+  serialized_end=118,
 )
 
 
-_AGENTOBSERVATIONREQUEST = _descriptor.Descriptor(
-  name='AgentObservationRequest',
-  full_name='pb.AgentObservationRequest',
+_OBSERVATION = _descriptor.Descriptor(
+  name='Observation',
+  full_name='olamai.endpoints.simulation.Observation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Id', full_name='pb.AgentObservationRequest.Id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=99,
-  serialized_end=136,
-)
-
-
-_AGENTOBSERVATIONRESULT = _descriptor.Descriptor(
-  name='AgentObservationResult',
-  full_name='pb.AgentObservationResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='Alive', full_name='pb.AgentObservationResult.Alive', index=0,
+      name='alive', full_name='olamai.endpoints.simulation.Observation.alive', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Cells', full_name='pb.AgentObservationResult.Cells', index=1,
+      name='cells', full_name='olamai.endpoints.simulation.Observation.cells', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Energy', full_name='pb.AgentObservationResult.Energy', index=2,
+      name='energy', full_name='olamai.endpoints.simulation.Observation.energy', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Health', full_name='pb.AgentObservationResult.Health', index=3,
+      name='health', full_name='olamai.endpoints.simulation.Observation.health', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -172,39 +143,32 @@ _AGENTOBSERVATIONRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=224,
+  serialized_start=120,
+  serialized_end=195,
 )
 
 
-_AGENTACTIONREQUEST = _descriptor.Descriptor(
-  name='AgentActionRequest',
-  full_name='pb.AgentActionRequest',
+_ACTION = _descriptor.Descriptor(
+  name='Action',
+  full_name='olamai.endpoints.simulation.Action',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Id', full_name='pb.AgentActionRequest.Id', index=0,
+      name='actionId', full_name='olamai.endpoints.simulation.Action.actionId', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Action', full_name='pb.AgentActionRequest.Action', index=1,
+      name='direction', full_name='olamai.endpoints.simulation.Action.direction', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Direction', full_name='pb.AgentActionRequest.Direction', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -217,137 +181,34 @@ _AGENTACTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=226,
-  serialized_end=293,
-)
-
-
-_AGENTACTIONRESULT = _descriptor.Descriptor(
-  name='AgentActionResult',
-  full_name='pb.AgentActionResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='Successful', full_name='pb.AgentActionResult.Successful', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=295,
-  serialized_end=334,
-)
-
-
-_RESETWORLDREQUEST = _descriptor.Descriptor(
-  name='ResetWorldRequest',
-  full_name='pb.ResetWorldRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=336,
-  serialized_end=355,
-)
-
-
-_RESETWORLDRESULT = _descriptor.Descriptor(
-  name='ResetWorldResult',
-  full_name='pb.ResetWorldResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=357,
-  serialized_end=375,
-)
-
-
-_SPECTATEREQUEST = _descriptor.Descriptor(
-  name='SpectateRequest',
-  full_name='pb.SpectateRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=377,
-  serialized_end=394,
+  serialized_start=197,
+  serialized_end=242,
 )
 
 
 _CELLUPDATE = _descriptor.Descriptor(
   name='CellUpdate',
-  full_name='pb.CellUpdate',
+  full_name='olamai.endpoints.simulation.CellUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='X', full_name='pb.CellUpdate.X', index=0,
+      name='x', full_name='olamai.endpoints.simulation.CellUpdate.x', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Y', full_name='pb.CellUpdate.Y', index=1,
+      name='y', full_name='olamai.endpoints.simulation.CellUpdate.y', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Occupant', full_name='pb.CellUpdate.Occupant', index=2,
+      name='occupant', full_name='olamai.endpoints.simulation.CellUpdate.occupant', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -365,147 +226,516 @@ _CELLUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=448,
+  serialized_start=244,
+  serialized_end=296,
 )
 
-DESCRIPTOR.message_types_by_name['SpawnAgentRequest'] = _SPAWNAGENTREQUEST
-DESCRIPTOR.message_types_by_name['SpawnAgentResult'] = _SPAWNAGENTRESULT
-DESCRIPTOR.message_types_by_name['AgentObservationRequest'] = _AGENTOBSERVATIONREQUEST
-DESCRIPTOR.message_types_by_name['AgentObservationResult'] = _AGENTOBSERVATIONRESULT
-DESCRIPTOR.message_types_by_name['AgentActionRequest'] = _AGENTACTIONREQUEST
-DESCRIPTOR.message_types_by_name['AgentActionResult'] = _AGENTACTIONRESULT
-DESCRIPTOR.message_types_by_name['ResetWorldRequest'] = _RESETWORLDREQUEST
-DESCRIPTOR.message_types_by_name['ResetWorldResult'] = _RESETWORLDRESULT
-DESCRIPTOR.message_types_by_name['SpectateRequest'] = _SPECTATEREQUEST
+
+_SPECTATOR = _descriptor.Descriptor(
+  name='Spectator',
+  full_name='olamai.endpoints.simulation.Spectator',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='olamai.endpoints.simulation.Spectator.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=298,
+  serialized_end=321,
+)
+
+
+_REGION = _descriptor.Descriptor(
+  name='Region',
+  full_name='olamai.endpoints.simulation.Region',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='olamai.endpoints.simulation.Region.x', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='olamai.endpoints.simulation.Region.y', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=323,
+  serialized_end=353,
+)
+
+
+_CREATEAGENTREQUEST = _descriptor.Descriptor(
+  name='CreateAgentRequest',
+  full_name='olamai.endpoints.simulation.CreateAgentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agent', full_name='olamai.endpoints.simulation.CreateAgentRequest.agent', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=355,
+  serialized_end=426,
+)
+
+
+_GETAGENTREQUEST = _descriptor.Descriptor(
+  name='GetAgentRequest',
+  full_name='olamai.endpoints.simulation.GetAgentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agent', full_name='olamai.endpoints.simulation.GetAgentRequest.agent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=428,
+  serialized_end=460,
+)
+
+
+_DELETEAGENTREQUEST = _descriptor.Descriptor(
+  name='DeleteAgentRequest',
+  full_name='olamai.endpoints.simulation.DeleteAgentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agent', full_name='olamai.endpoints.simulation.DeleteAgentRequest.agent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=462,
+  serialized_end=497,
+)
+
+
+_ACTIONAGENTREQUEST = _descriptor.Descriptor(
+  name='ActionAgentRequest',
+  full_name='olamai.endpoints.simulation.ActionAgentRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agent', full_name='olamai.endpoints.simulation.ActionAgentRequest.agent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='actionId', full_name='olamai.endpoints.simulation.ActionAgentRequest.actionId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='direction', full_name='olamai.endpoints.simulation.ActionAgentRequest.direction', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=499,
+  serialized_end=571,
+)
+
+
+_GETOBSERVATIONREQUEST = _descriptor.Descriptor(
+  name='GetObservationRequest',
+  full_name='olamai.endpoints.simulation.GetObservationRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agent', full_name='olamai.endpoints.simulation.GetObservationRequest.agent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=573,
+  serialized_end=611,
+)
+
+
+_CREATESPECTATORREQUEST = _descriptor.Descriptor(
+  name='CreateSpectatorRequest',
+  full_name='olamai.endpoints.simulation.CreateSpectatorRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='spectator', full_name='olamai.endpoints.simulation.CreateSpectatorRequest.spectator', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=613,
+  serialized_end=696,
+)
+
+
+_SUBSCRIBESPECTATORREQUEST = _descriptor.Descriptor(
+  name='SubscribeSpectatorRequest',
+  full_name='olamai.endpoints.simulation.SubscribeSpectatorRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='spectator', full_name='olamai.endpoints.simulation.SubscribeSpectatorRequest.spectator', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='region', full_name='olamai.endpoints.simulation.SubscribeSpectatorRequest.region', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=698,
+  serialized_end=797,
+)
+
+_CREATEAGENTREQUEST.fields_by_name['agent'].message_type = _AGENT
+_CREATESPECTATORREQUEST.fields_by_name['spectator'].message_type = _SPECTATOR
+_SUBSCRIBESPECTATORREQUEST.fields_by_name['region'].message_type = _REGION
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
+DESCRIPTOR.message_types_by_name['Agent'] = _AGENT
+DESCRIPTOR.message_types_by_name['Observation'] = _OBSERVATION
+DESCRIPTOR.message_types_by_name['Action'] = _ACTION
 DESCRIPTOR.message_types_by_name['CellUpdate'] = _CELLUPDATE
+DESCRIPTOR.message_types_by_name['Spectator'] = _SPECTATOR
+DESCRIPTOR.message_types_by_name['Region'] = _REGION
+DESCRIPTOR.message_types_by_name['CreateAgentRequest'] = _CREATEAGENTREQUEST
+DESCRIPTOR.message_types_by_name['GetAgentRequest'] = _GETAGENTREQUEST
+DESCRIPTOR.message_types_by_name['DeleteAgentRequest'] = _DELETEAGENTREQUEST
+DESCRIPTOR.message_types_by_name['ActionAgentRequest'] = _ACTIONAGENTREQUEST
+DESCRIPTOR.message_types_by_name['GetObservationRequest'] = _GETOBSERVATIONREQUEST
+DESCRIPTOR.message_types_by_name['CreateSpectatorRequest'] = _CREATESPECTATORREQUEST
+DESCRIPTOR.message_types_by_name['SubscribeSpectatorRequest'] = _SUBSCRIBESPECTATORREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-SpawnAgentRequest = _reflection.GeneratedProtocolMessageType('SpawnAgentRequest', (_message.Message,), dict(
-  DESCRIPTOR = _SPAWNAGENTREQUEST,
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
   __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.SpawnAgentRequest)
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Empty)
   ))
-_sym_db.RegisterMessage(SpawnAgentRequest)
+_sym_db.RegisterMessage(Empty)
 
-SpawnAgentResult = _reflection.GeneratedProtocolMessageType('SpawnAgentResult', (_message.Message,), dict(
-  DESCRIPTOR = _SPAWNAGENTRESULT,
+Agent = _reflection.GeneratedProtocolMessageType('Agent', (_message.Message,), dict(
+  DESCRIPTOR = _AGENT,
   __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.SpawnAgentResult)
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Agent)
   ))
-_sym_db.RegisterMessage(SpawnAgentResult)
+_sym_db.RegisterMessage(Agent)
 
-AgentObservationRequest = _reflection.GeneratedProtocolMessageType('AgentObservationRequest', (_message.Message,), dict(
-  DESCRIPTOR = _AGENTOBSERVATIONREQUEST,
+Observation = _reflection.GeneratedProtocolMessageType('Observation', (_message.Message,), dict(
+  DESCRIPTOR = _OBSERVATION,
   __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.AgentObservationRequest)
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Observation)
   ))
-_sym_db.RegisterMessage(AgentObservationRequest)
+_sym_db.RegisterMessage(Observation)
 
-AgentObservationResult = _reflection.GeneratedProtocolMessageType('AgentObservationResult', (_message.Message,), dict(
-  DESCRIPTOR = _AGENTOBSERVATIONRESULT,
+Action = _reflection.GeneratedProtocolMessageType('Action', (_message.Message,), dict(
+  DESCRIPTOR = _ACTION,
   __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.AgentObservationResult)
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Action)
   ))
-_sym_db.RegisterMessage(AgentObservationResult)
-
-AgentActionRequest = _reflection.GeneratedProtocolMessageType('AgentActionRequest', (_message.Message,), dict(
-  DESCRIPTOR = _AGENTACTIONREQUEST,
-  __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.AgentActionRequest)
-  ))
-_sym_db.RegisterMessage(AgentActionRequest)
-
-AgentActionResult = _reflection.GeneratedProtocolMessageType('AgentActionResult', (_message.Message,), dict(
-  DESCRIPTOR = _AGENTACTIONRESULT,
-  __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.AgentActionResult)
-  ))
-_sym_db.RegisterMessage(AgentActionResult)
-
-ResetWorldRequest = _reflection.GeneratedProtocolMessageType('ResetWorldRequest', (_message.Message,), dict(
-  DESCRIPTOR = _RESETWORLDREQUEST,
-  __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.ResetWorldRequest)
-  ))
-_sym_db.RegisterMessage(ResetWorldRequest)
-
-ResetWorldResult = _reflection.GeneratedProtocolMessageType('ResetWorldResult', (_message.Message,), dict(
-  DESCRIPTOR = _RESETWORLDRESULT,
-  __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.ResetWorldResult)
-  ))
-_sym_db.RegisterMessage(ResetWorldResult)
-
-SpectateRequest = _reflection.GeneratedProtocolMessageType('SpectateRequest', (_message.Message,), dict(
-  DESCRIPTOR = _SPECTATEREQUEST,
-  __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.SpectateRequest)
-  ))
-_sym_db.RegisterMessage(SpectateRequest)
+_sym_db.RegisterMessage(Action)
 
 CellUpdate = _reflection.GeneratedProtocolMessageType('CellUpdate', (_message.Message,), dict(
   DESCRIPTOR = _CELLUPDATE,
   __module__ = 'simulation_pb2'
-  # @@protoc_insertion_point(class_scope:pb.CellUpdate)
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.CellUpdate)
   ))
 _sym_db.RegisterMessage(CellUpdate)
+
+Spectator = _reflection.GeneratedProtocolMessageType('Spectator', (_message.Message,), dict(
+  DESCRIPTOR = _SPECTATOR,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Spectator)
+  ))
+_sym_db.RegisterMessage(Spectator)
+
+Region = _reflection.GeneratedProtocolMessageType('Region', (_message.Message,), dict(
+  DESCRIPTOR = _REGION,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.Region)
+  ))
+_sym_db.RegisterMessage(Region)
+
+CreateAgentRequest = _reflection.GeneratedProtocolMessageType('CreateAgentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEAGENTREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.CreateAgentRequest)
+  ))
+_sym_db.RegisterMessage(CreateAgentRequest)
+
+GetAgentRequest = _reflection.GeneratedProtocolMessageType('GetAgentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETAGENTREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.GetAgentRequest)
+  ))
+_sym_db.RegisterMessage(GetAgentRequest)
+
+DeleteAgentRequest = _reflection.GeneratedProtocolMessageType('DeleteAgentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEAGENTREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.DeleteAgentRequest)
+  ))
+_sym_db.RegisterMessage(DeleteAgentRequest)
+
+ActionAgentRequest = _reflection.GeneratedProtocolMessageType('ActionAgentRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ACTIONAGENTREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.ActionAgentRequest)
+  ))
+_sym_db.RegisterMessage(ActionAgentRequest)
+
+GetObservationRequest = _reflection.GeneratedProtocolMessageType('GetObservationRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETOBSERVATIONREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.GetObservationRequest)
+  ))
+_sym_db.RegisterMessage(GetObservationRequest)
+
+CreateSpectatorRequest = _reflection.GeneratedProtocolMessageType('CreateSpectatorRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATESPECTATORREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.CreateSpectatorRequest)
+  ))
+_sym_db.RegisterMessage(CreateSpectatorRequest)
+
+SubscribeSpectatorRequest = _reflection.GeneratedProtocolMessageType('SubscribeSpectatorRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SUBSCRIBESPECTATORREQUEST,
+  __module__ = 'simulation_pb2'
+  # @@protoc_insertion_point(class_scope:olamai.endpoints.simulation.SubscribeSpectatorRequest)
+  ))
+_sym_db.RegisterMessage(SubscribeSpectatorRequest)
 
 
 
 _SIMULATION = _descriptor.ServiceDescriptor(
   name='Simulation',
-  full_name='pb.Simulation',
+  full_name='olamai.endpoints.simulation.Simulation',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=451,
-  serialized_end=781,
+  serialized_start=800,
+  serialized_end=1889,
   methods=[
   _descriptor.MethodDescriptor(
-    name='SpawnAgent',
-    full_name='pb.Simulation.SpawnAgent',
+    name='CreateAgent',
+    full_name='olamai.endpoints.simulation.Simulation.CreateAgent',
     index=0,
     containing_service=None,
-    input_type=_SPAWNAGENTREQUEST,
-    output_type=_SPAWNAGENTRESULT,
-    serialized_options=None,
+    input_type=_CREATEAGENTREQUEST,
+    output_type=_AGENT,
+    serialized_options=_b('\202\323\344\223\002\023\"\n/v1/agents:\005agent'),
   ),
   _descriptor.MethodDescriptor(
-    name='AgentObservation',
-    full_name='pb.Simulation.AgentObservation',
+    name='GetAgent',
+    full_name='olamai.endpoints.simulation.Simulation.GetAgent',
     index=1,
     containing_service=None,
-    input_type=_AGENTOBSERVATIONREQUEST,
-    output_type=_AGENTOBSERVATIONRESULT,
-    serialized_options=None,
+    input_type=_GETAGENTREQUEST,
+    output_type=_AGENT,
+    serialized_options=_b('\202\323\344\223\002\024\022\022/v1/agents/{agent}'),
   ),
   _descriptor.MethodDescriptor(
-    name='AgentAction',
-    full_name='pb.Simulation.AgentAction',
+    name='DeleteAgent',
+    full_name='olamai.endpoints.simulation.Simulation.DeleteAgent',
     index=2,
     containing_service=None,
-    input_type=_AGENTACTIONREQUEST,
-    output_type=_AGENTACTIONRESULT,
-    serialized_options=None,
+    input_type=_DELETEAGENTREQUEST,
+    output_type=_EMPTY,
+    serialized_options=_b('\202\323\344\223\002\024*\022/v1/agents/{agent}'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='ActionAgent',
+    full_name='olamai.endpoints.simulation.Simulation.ActionAgent',
+    index=3,
+    containing_service=None,
+    input_type=_ACTIONAGENTREQUEST,
+    output_type=_EMPTY,
+    serialized_options=_b('\202\323\344\223\002\034\"\022/v1/agents/{agent}:\006action'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetObservation',
+    full_name='olamai.endpoints.simulation.Simulation.GetObservation',
+    index=4,
+    containing_service=None,
+    input_type=_GETOBSERVATIONREQUEST,
+    output_type=_OBSERVATION,
+    serialized_options=_b('\202\323\344\223\002\032\022\030/v1/observations/{agent}'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateSpectator',
+    full_name='olamai.endpoints.simulation.Simulation.CreateSpectator',
+    index=5,
+    containing_service=None,
+    input_type=_CREATESPECTATORREQUEST,
+    output_type=_CELLUPDATE,
+    serialized_options=_b('\202\323\344\223\002\034\"\017/v1/spectators/:\tspectator'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='SubscribeSpectator',
+    full_name='olamai.endpoints.simulation.Simulation.SubscribeSpectator',
+    index=6,
+    containing_service=None,
+    input_type=_SUBSCRIBESPECTATORREQUEST,
+    output_type=_EMPTY,
+    serialized_options=_b('\202\323\344\223\002$\"\032/v1/spectators/{spectator}:\006region'),
   ),
   _descriptor.MethodDescriptor(
     name='ResetWorld',
-    full_name='pb.Simulation.ResetWorld',
-    index=3,
+    full_name='olamai.endpoints.simulation.Simulation.ResetWorld',
+    index=7,
     containing_service=None,
-    input_type=_RESETWORLDREQUEST,
-    output_type=_RESETWORLDRESULT,
-    serialized_options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Spectate',
-    full_name='pb.Simulation.Spectate',
-    index=4,
-    containing_service=None,
-    input_type=_SPECTATEREQUEST,
-    output_type=_CELLUPDATE,
-    serialized_options=None,
+    input_type=_EMPTY,
+    output_type=_EMPTY,
+    serialized_options=_b('\202\323\344\223\002\013*\t/v1/world'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SIMULATION)
