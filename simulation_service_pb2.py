@@ -21,38 +21,31 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\222A\325\001\022o\n\022Simulation service\"T\n\022simulation project\022$https://github.com/olamai/simulation\032\030zacharyholland@gmail.com2\0031.0*\001\0012\020application/json:\020application/jsonR;\n\003404\0224\n*Returned when the resource does not exist.\022\006\n\004\232\002\001\007'),
-  serialized_pb=_b('\n\x18simulation-service.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\")\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\"\'\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdirection\x18\x02 \x01(\t\"K\n\x0bObservation\x12\r\n\x05\x43\x65lls\x18\x01 \x03(\t\x12\r\n\x05\x41live\x18\x02 \x01(\x08\x12\x0e\n\x06\x45nergy\x18\x03 \x01(\x05\x12\x0e\n\x06Health\x18\x04 \x01(\x05\"4\n\nCellUpdate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x10\n\x08occupant\x18\x03 \x01(\t\"\x1e\n\x06Region\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\";\n\x12\x43reateAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x18\n\x05\x61gent\x18\x02 \x01(\x0b\x32\t.v1.Agent\".\n\x13\x43reateAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"*\n\x0fGetAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"9\n\x10GetAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x18\n\x05\x61gent\x18\x02 \x01(\x0b\x32\t.v1.Agent\"-\n\x12\x44\x65leteAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"3\n\x13\x44\x65leteAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x02 \x01(\t\"P\n\x19\x45xecuteAgentActionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\n.v1.Action\"a\n\x1a\x45xecuteAgentActionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x19\n\x11isAgentStillAlive\x18\x02 \x01(\x08\x12\x1b\n\x13wasActionSuccessful\x18\x03 \x01(\x08\"5\n\x1aGetAgentObservationRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"P\n\x1bGetAgentObservationResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12$\n\x0bobservation\x18\x02 \x01(\x0b\x32\x0f.v1.Observation\"1\n\x16\x43reateSpectatorRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"X\n!SubscribeSpectatorToRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"E\n\"SubscribeSpectatorToRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\x32\xf3\x05\n\x11SimulationService\x12T\n\x0b\x43reateAgent\x12\x16.v1.CreateAgentRequest\x1a\x17.v1.CreateAgentResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/agent:\x01*\x12M\n\x08GetAgent\x12\x13.v1.GetAgentRequest\x1a\x14.v1.GetAgentResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/agent/{id}\x12V\n\x0b\x44\x65leteAgent\x12\x16.v1.DeleteAgentRequest\x1a\x17.v1.DeleteAgentResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/agent/{id}\x12n\n\x12\x45xecuteAgentAction\x12\x1d.v1.ExecuteAgentActionRequest\x1a\x1e.v1.ExecuteAgentActionResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/agent/{id}:\x01*\x12z\n\x13GetAgentObservation\x12\x1e.v1.GetAgentObservationRequest\x1a\x1f.v1.GetAgentObservationResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/agent/{id}/observation\x12V\n\x0f\x43reateSpectator\x12\x1a.v1.CreateSpectatorRequest\x1a\x0e.v1.CellUpdate\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/spectator0\x01\x12\x9c\x01\n\x1aSubscribeSpectatorToRegion\x12%.v1.SubscribeSpectatorToRegionRequest\x1a&.v1.SubscribeSpectatorToRegionResponse\"/\x82\xd3\xe4\x93\x02)\x1a$/v1/spectator/{id}/subscribeToRegion:\x01*B\xd9\x01\x92\x41\xd5\x01\x12o\n\x12Simulation service\"T\n\x12simulation project\x12$https://github.com/olamai/simulation\x1a\x18zacharyholland@gmail.com2\x03\x31.0*\x01\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07\x62\x06proto3')
+  serialized_pb=_b('\n\x18simulation-service.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\"#\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05\x63lass\x18\x04 \x01(\t\"\'\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdirection\x18\x02 \x01(\t\"K\n\x0bObservation\x12\r\n\x05\x63\x65lls\x18\x01 \x03(\t\x12\r\n\x05\x61live\x18\x02 \x01(\x08\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x05\x12\x0e\n\x06health\x18\x04 \x01(\x05\">\n\nCellUpdate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x1a\n\x06\x65ntity\x18\x04 \x01(\x0b\x32\n.v1.Entity\"\x1e\n\x0cServerAction\x12\x0e\n\x06\x61\x63tion\x18\x01 \x01(\t\"j\n\x10SpectateResponse\x12$\n\ncellUpdate\x18\x01 \x01(\x0b\x32\x0e.v1.CellUpdateH\x00\x12(\n\x0cserverAction\x18\x02 \x01(\x0b\x32\x10.v1.ServerActionH\x00\x42\x06\n\x04\x64\x61ta\"\x1e\n\x06Region\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"7\n\x12\x43reateAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\".\n\x13\x43reateAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"-\n\x12\x44\x65leteAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"3\n\x13\x44\x65leteAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x02 \x01(\x03\"P\n\x19\x45xecuteAgentActionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\x12\x1a\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\n.v1.Action\"a\n\x1a\x45xecuteAgentActionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x19\n\x11isAgentStillAlive\x18\x02 \x01(\x08\x12\x1b\n\x13wasActionSuccessful\x18\x03 \x01(\x08\"5\n\x1aGetAgentObservationRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"P\n\x1bGetAgentObservationResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12$\n\x0bobservation\x18\x02 \x01(\x0b\x32\x0f.v1.Observation\" \n\x11ResetWorldRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\"\x14\n\x12ResetWorldResponse\"+\n\x10GetEntityRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"<\n\x11GetEntityResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x1a\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\n.v1.Entity\"1\n\x16\x43reateSpectatorRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"X\n!SubscribeSpectatorToRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"E\n\"SubscribeSpectatorToRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\"\\\n%UnsubscribeSpectatorFromRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"I\n&UnsubscribeSpectatorFromRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\x32\xff\x07\n\x11SimulationService\x12T\n\x0b\x43reateAgent\x12\x16.v1.CreateAgentRequest\x1a\x17.v1.CreateAgentResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/agent:\x01*\x12Q\n\tGetEntity\x12\x14.v1.GetEntityRequest\x1a\x15.v1.GetEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/entity/{id}\x12V\n\x0b\x44\x65leteAgent\x12\x16.v1.DeleteAgentRequest\x1a\x17.v1.DeleteAgentResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/agent/{id}\x12n\n\x12\x45xecuteAgentAction\x12\x1d.v1.ExecuteAgentActionRequest\x1a\x1e.v1.ExecuteAgentActionResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/agent/{id}:\x01*\x12z\n\x13GetAgentObservation\x12\x1e.v1.GetAgentObservationRequest\x1a\x1f.v1.GetAgentObservationResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/agent/{id}/observation\x12\\\n\x0f\x43reateSpectator\x12\x1a.v1.CreateSpectatorRequest\x1a\x14.v1.SpectateResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/spectator0\x01\x12\x9c\x01\n\x1aSubscribeSpectatorToRegion\x12%.v1.SubscribeSpectatorToRegionRequest\x1a&.v1.SubscribeSpectatorToRegionResponse\"/\x82\xd3\xe4\x93\x02)\x1a$/v1/spectator/{id}/subscribeToRegion:\x01*\x12\xac\x01\n\x1eUnsubscribeSpectatorFromRegion\x12).v1.UnsubscribeSpectatorFromRegionRequest\x1a*.v1.UnsubscribeSpectatorFromRegionResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/spectator/{id}/unsubscribeFromRegion:\x01*\x12Q\n\nResetWorld\x12\x15.v1.ResetWorldRequest\x1a\x16.v1.ResetWorldResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x1a\t/v1/reset:\x01*B\xd9\x01\x92\x41\xd5\x01\x12o\n\x12Simulation service\"T\n\x12simulation project\x12$https://github.com/olamai/simulation\x1a\x18zacharyholland@gmail.com2\x03\x31.0*\x01\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07\x62\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
 
-_AGENT = _descriptor.Descriptor(
-  name='Agent',
-  full_name='v1.Agent',
+_ENTITY = _descriptor.Descriptor(
+  name='Entity',
+  full_name='v1.Entity',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='v1.Agent.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='id', full_name='v1.Entity.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='class', full_name='v1.Entity.class', index=1,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='x', full_name='v1.Agent.x', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='v1.Agent.y', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -69,7 +62,7 @@ _AGENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=108,
-  serialized_end=149,
+  serialized_end=143,
 )
 
 
@@ -106,8 +99,8 @@ _ACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=151,
-  serialized_end=190,
+  serialized_start=145,
+  serialized_end=184,
 )
 
 
@@ -119,28 +112,28 @@ _OBSERVATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Cells', full_name='v1.Observation.Cells', index=0,
+      name='cells', full_name='v1.Observation.cells', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Alive', full_name='v1.Observation.Alive', index=1,
+      name='alive', full_name='v1.Observation.alive', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Energy', full_name='v1.Observation.Energy', index=2,
+      name='energy', full_name='v1.Observation.energy', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Health', full_name='v1.Observation.Health', index=3,
+      name='health', full_name='v1.Observation.health', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -158,8 +151,8 @@ _OBSERVATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=267,
+  serialized_start=186,
+  serialized_end=261,
 )
 
 
@@ -185,8 +178,39 @@ _CELLUPDATE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='occupant', full_name='v1.CellUpdate.occupant', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='entity', full_name='v1.CellUpdate.entity', index=2,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=263,
+  serialized_end=325,
+)
+
+
+_SERVERACTION = _descriptor.Descriptor(
+  name='ServerAction',
+  full_name='v1.ServerAction',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='action', full_name='v1.ServerAction.action', index=0,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -203,8 +227,49 @@ _CELLUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=269,
-  serialized_end=321,
+  serialized_start=327,
+  serialized_end=357,
+)
+
+
+_SPECTATERESPONSE = _descriptor.Descriptor(
+  name='SpectateResponse',
+  full_name='v1.SpectateResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cellUpdate', full_name='v1.SpectateResponse.cellUpdate', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='serverAction', full_name='v1.SpectateResponse.serverAction', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='data', full_name='v1.SpectateResponse.data',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=359,
+  serialized_end=465,
 )
 
 
@@ -241,8 +306,8 @@ _REGION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=353,
+  serialized_start=467,
+  serialized_end=497,
 )
 
 
@@ -261,9 +326,16 @@ _CREATEAGENTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='agent', full_name='v1.CreateAgentRequest.agent', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='x', full_name='v1.CreateAgentRequest.x', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='v1.CreateAgentRequest.y', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -279,8 +351,8 @@ _CREATEAGENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=414,
+  serialized_start=499,
+  serialized_end=554,
 )
 
 
@@ -300,8 +372,8 @@ _CREATEAGENTRESPONSE = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='v1.CreateAgentResponse.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -317,84 +389,8 @@ _CREATEAGENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=416,
-  serialized_end=462,
-)
-
-
-_GETAGENTREQUEST = _descriptor.Descriptor(
-  name='GetAgentRequest',
-  full_name='v1.GetAgentRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api', full_name='v1.GetAgentRequest.api', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='v1.GetAgentRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=464,
-  serialized_end=506,
-)
-
-
-_GETAGENTRESPONSE = _descriptor.Descriptor(
-  name='GetAgentResponse',
-  full_name='v1.GetAgentResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api', full_name='v1.GetAgentResponse.api', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='agent', full_name='v1.GetAgentResponse.agent', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=508,
-  serialized_end=565,
+  serialized_start=556,
+  serialized_end=602,
 )
 
 
@@ -414,8 +410,8 @@ _DELETEAGENTREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='v1.DeleteAgentRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -431,8 +427,8 @@ _DELETEAGENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=567,
-  serialized_end=612,
+  serialized_start=604,
+  serialized_end=649,
 )
 
 
@@ -452,8 +448,8 @@ _DELETEAGENTRESPONSE = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='deleted', full_name='v1.DeleteAgentResponse.deleted', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -469,8 +465,8 @@ _DELETEAGENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=665,
+  serialized_start=651,
+  serialized_end=702,
 )
 
 
@@ -490,8 +486,8 @@ _EXECUTEAGENTACTIONREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='v1.ExecuteAgentActionRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -514,8 +510,8 @@ _EXECUTEAGENTACTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=667,
-  serialized_end=747,
+  serialized_start=704,
+  serialized_end=784,
 )
 
 
@@ -559,8 +555,8 @@ _EXECUTEAGENTACTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=846,
+  serialized_start=786,
+  serialized_end=883,
 )
 
 
@@ -580,8 +576,8 @@ _GETAGENTOBSERVATIONREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='id', full_name='v1.GetAgentObservationRequest.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -597,8 +593,8 @@ _GETAGENTOBSERVATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=848,
-  serialized_end=901,
+  serialized_start=885,
+  serialized_end=938,
 )
 
 
@@ -635,8 +631,139 @@ _GETAGENTOBSERVATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=903,
-  serialized_end=983,
+  serialized_start=940,
+  serialized_end=1020,
+)
+
+
+_RESETWORLDREQUEST = _descriptor.Descriptor(
+  name='ResetWorldRequest',
+  full_name='v1.ResetWorldRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.ResetWorldRequest.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1022,
+  serialized_end=1054,
+)
+
+
+_RESETWORLDRESPONSE = _descriptor.Descriptor(
+  name='ResetWorldResponse',
+  full_name='v1.ResetWorldResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1056,
+  serialized_end=1076,
+)
+
+
+_GETENTITYREQUEST = _descriptor.Descriptor(
+  name='GetEntityRequest',
+  full_name='v1.GetEntityRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.GetEntityRequest.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='v1.GetEntityRequest.id', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1078,
+  serialized_end=1121,
+)
+
+
+_GETENTITYRESPONSE = _descriptor.Descriptor(
+  name='GetEntityResponse',
+  full_name='v1.GetEntityResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.GetEntityResponse.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='entity', full_name='v1.GetEntityResponse.entity', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1123,
+  serialized_end=1183,
 )
 
 
@@ -673,8 +800,8 @@ _CREATESPECTATORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=985,
-  serialized_end=1034,
+  serialized_start=1185,
+  serialized_end=1234,
 )
 
 
@@ -718,8 +845,8 @@ _SUBSCRIBESPECTATORTOREGIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1036,
-  serialized_end=1124,
+  serialized_start=1236,
+  serialized_end=1324,
 )
 
 
@@ -756,41 +883,139 @@ _SUBSCRIBESPECTATORTOREGIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1126,
-  serialized_end=1195,
+  serialized_start=1326,
+  serialized_end=1395,
 )
 
-_CREATEAGENTREQUEST.fields_by_name['agent'].message_type = _AGENT
-_GETAGENTRESPONSE.fields_by_name['agent'].message_type = _AGENT
+
+_UNSUBSCRIBESPECTATORFROMREGIONREQUEST = _descriptor.Descriptor(
+  name='UnsubscribeSpectatorFromRegionRequest',
+  full_name='v1.UnsubscribeSpectatorFromRegionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.UnsubscribeSpectatorFromRegionRequest.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='v1.UnsubscribeSpectatorFromRegionRequest.id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='region', full_name='v1.UnsubscribeSpectatorFromRegionRequest.region', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1397,
+  serialized_end=1489,
+)
+
+
+_UNSUBSCRIBESPECTATORFROMREGIONRESPONSE = _descriptor.Descriptor(
+  name='UnsubscribeSpectatorFromRegionResponse',
+  full_name='v1.UnsubscribeSpectatorFromRegionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.UnsubscribeSpectatorFromRegionResponse.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='successful', full_name='v1.UnsubscribeSpectatorFromRegionResponse.successful', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1491,
+  serialized_end=1564,
+)
+
+_CELLUPDATE.fields_by_name['entity'].message_type = _ENTITY
+_SPECTATERESPONSE.fields_by_name['cellUpdate'].message_type = _CELLUPDATE
+_SPECTATERESPONSE.fields_by_name['serverAction'].message_type = _SERVERACTION
+_SPECTATERESPONSE.oneofs_by_name['data'].fields.append(
+  _SPECTATERESPONSE.fields_by_name['cellUpdate'])
+_SPECTATERESPONSE.fields_by_name['cellUpdate'].containing_oneof = _SPECTATERESPONSE.oneofs_by_name['data']
+_SPECTATERESPONSE.oneofs_by_name['data'].fields.append(
+  _SPECTATERESPONSE.fields_by_name['serverAction'])
+_SPECTATERESPONSE.fields_by_name['serverAction'].containing_oneof = _SPECTATERESPONSE.oneofs_by_name['data']
 _EXECUTEAGENTACTIONREQUEST.fields_by_name['action'].message_type = _ACTION
 _GETAGENTOBSERVATIONRESPONSE.fields_by_name['observation'].message_type = _OBSERVATION
+_GETENTITYRESPONSE.fields_by_name['entity'].message_type = _ENTITY
 _SUBSCRIBESPECTATORTOREGIONREQUEST.fields_by_name['region'].message_type = _REGION
-DESCRIPTOR.message_types_by_name['Agent'] = _AGENT
+_UNSUBSCRIBESPECTATORFROMREGIONREQUEST.fields_by_name['region'].message_type = _REGION
+DESCRIPTOR.message_types_by_name['Entity'] = _ENTITY
 DESCRIPTOR.message_types_by_name['Action'] = _ACTION
 DESCRIPTOR.message_types_by_name['Observation'] = _OBSERVATION
 DESCRIPTOR.message_types_by_name['CellUpdate'] = _CELLUPDATE
+DESCRIPTOR.message_types_by_name['ServerAction'] = _SERVERACTION
+DESCRIPTOR.message_types_by_name['SpectateResponse'] = _SPECTATERESPONSE
 DESCRIPTOR.message_types_by_name['Region'] = _REGION
 DESCRIPTOR.message_types_by_name['CreateAgentRequest'] = _CREATEAGENTREQUEST
 DESCRIPTOR.message_types_by_name['CreateAgentResponse'] = _CREATEAGENTRESPONSE
-DESCRIPTOR.message_types_by_name['GetAgentRequest'] = _GETAGENTREQUEST
-DESCRIPTOR.message_types_by_name['GetAgentResponse'] = _GETAGENTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteAgentRequest'] = _DELETEAGENTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteAgentResponse'] = _DELETEAGENTRESPONSE
 DESCRIPTOR.message_types_by_name['ExecuteAgentActionRequest'] = _EXECUTEAGENTACTIONREQUEST
 DESCRIPTOR.message_types_by_name['ExecuteAgentActionResponse'] = _EXECUTEAGENTACTIONRESPONSE
 DESCRIPTOR.message_types_by_name['GetAgentObservationRequest'] = _GETAGENTOBSERVATIONREQUEST
 DESCRIPTOR.message_types_by_name['GetAgentObservationResponse'] = _GETAGENTOBSERVATIONRESPONSE
+DESCRIPTOR.message_types_by_name['ResetWorldRequest'] = _RESETWORLDREQUEST
+DESCRIPTOR.message_types_by_name['ResetWorldResponse'] = _RESETWORLDRESPONSE
+DESCRIPTOR.message_types_by_name['GetEntityRequest'] = _GETENTITYREQUEST
+DESCRIPTOR.message_types_by_name['GetEntityResponse'] = _GETENTITYRESPONSE
 DESCRIPTOR.message_types_by_name['CreateSpectatorRequest'] = _CREATESPECTATORREQUEST
 DESCRIPTOR.message_types_by_name['SubscribeSpectatorToRegionRequest'] = _SUBSCRIBESPECTATORTOREGIONREQUEST
 DESCRIPTOR.message_types_by_name['SubscribeSpectatorToRegionResponse'] = _SUBSCRIBESPECTATORTOREGIONRESPONSE
+DESCRIPTOR.message_types_by_name['UnsubscribeSpectatorFromRegionRequest'] = _UNSUBSCRIBESPECTATORFROMREGIONREQUEST
+DESCRIPTOR.message_types_by_name['UnsubscribeSpectatorFromRegionResponse'] = _UNSUBSCRIBESPECTATORFROMREGIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Agent = _reflection.GeneratedProtocolMessageType('Agent', (_message.Message,), dict(
-  DESCRIPTOR = _AGENT,
+Entity = _reflection.GeneratedProtocolMessageType('Entity', (_message.Message,), dict(
+  DESCRIPTOR = _ENTITY,
   __module__ = 'simulation_service_pb2'
-  # @@protoc_insertion_point(class_scope:v1.Agent)
+  # @@protoc_insertion_point(class_scope:v1.Entity)
   ))
-_sym_db.RegisterMessage(Agent)
+_sym_db.RegisterMessage(Entity)
 
 Action = _reflection.GeneratedProtocolMessageType('Action', (_message.Message,), dict(
   DESCRIPTOR = _ACTION,
@@ -813,6 +1038,20 @@ CellUpdate = _reflection.GeneratedProtocolMessageType('CellUpdate', (_message.Me
   ))
 _sym_db.RegisterMessage(CellUpdate)
 
+ServerAction = _reflection.GeneratedProtocolMessageType('ServerAction', (_message.Message,), dict(
+  DESCRIPTOR = _SERVERACTION,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ServerAction)
+  ))
+_sym_db.RegisterMessage(ServerAction)
+
+SpectateResponse = _reflection.GeneratedProtocolMessageType('SpectateResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SPECTATERESPONSE,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.SpectateResponse)
+  ))
+_sym_db.RegisterMessage(SpectateResponse)
+
 Region = _reflection.GeneratedProtocolMessageType('Region', (_message.Message,), dict(
   DESCRIPTOR = _REGION,
   __module__ = 'simulation_service_pb2'
@@ -833,20 +1072,6 @@ CreateAgentResponse = _reflection.GeneratedProtocolMessageType('CreateAgentRespo
   # @@protoc_insertion_point(class_scope:v1.CreateAgentResponse)
   ))
 _sym_db.RegisterMessage(CreateAgentResponse)
-
-GetAgentRequest = _reflection.GeneratedProtocolMessageType('GetAgentRequest', (_message.Message,), dict(
-  DESCRIPTOR = _GETAGENTREQUEST,
-  __module__ = 'simulation_service_pb2'
-  # @@protoc_insertion_point(class_scope:v1.GetAgentRequest)
-  ))
-_sym_db.RegisterMessage(GetAgentRequest)
-
-GetAgentResponse = _reflection.GeneratedProtocolMessageType('GetAgentResponse', (_message.Message,), dict(
-  DESCRIPTOR = _GETAGENTRESPONSE,
-  __module__ = 'simulation_service_pb2'
-  # @@protoc_insertion_point(class_scope:v1.GetAgentResponse)
-  ))
-_sym_db.RegisterMessage(GetAgentResponse)
 
 DeleteAgentRequest = _reflection.GeneratedProtocolMessageType('DeleteAgentRequest', (_message.Message,), dict(
   DESCRIPTOR = _DELETEAGENTREQUEST,
@@ -890,6 +1115,34 @@ GetAgentObservationResponse = _reflection.GeneratedProtocolMessageType('GetAgent
   ))
 _sym_db.RegisterMessage(GetAgentObservationResponse)
 
+ResetWorldRequest = _reflection.GeneratedProtocolMessageType('ResetWorldRequest', (_message.Message,), dict(
+  DESCRIPTOR = _RESETWORLDREQUEST,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ResetWorldRequest)
+  ))
+_sym_db.RegisterMessage(ResetWorldRequest)
+
+ResetWorldResponse = _reflection.GeneratedProtocolMessageType('ResetWorldResponse', (_message.Message,), dict(
+  DESCRIPTOR = _RESETWORLDRESPONSE,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.ResetWorldResponse)
+  ))
+_sym_db.RegisterMessage(ResetWorldResponse)
+
+GetEntityRequest = _reflection.GeneratedProtocolMessageType('GetEntityRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETENTITYREQUEST,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GetEntityRequest)
+  ))
+_sym_db.RegisterMessage(GetEntityRequest)
+
+GetEntityResponse = _reflection.GeneratedProtocolMessageType('GetEntityResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETENTITYRESPONSE,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.GetEntityResponse)
+  ))
+_sym_db.RegisterMessage(GetEntityResponse)
+
 CreateSpectatorRequest = _reflection.GeneratedProtocolMessageType('CreateSpectatorRequest', (_message.Message,), dict(
   DESCRIPTOR = _CREATESPECTATORREQUEST,
   __module__ = 'simulation_service_pb2'
@@ -911,6 +1164,20 @@ SubscribeSpectatorToRegionResponse = _reflection.GeneratedProtocolMessageType('S
   ))
 _sym_db.RegisterMessage(SubscribeSpectatorToRegionResponse)
 
+UnsubscribeSpectatorFromRegionRequest = _reflection.GeneratedProtocolMessageType('UnsubscribeSpectatorFromRegionRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UNSUBSCRIBESPECTATORFROMREGIONREQUEST,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.UnsubscribeSpectatorFromRegionRequest)
+  ))
+_sym_db.RegisterMessage(UnsubscribeSpectatorFromRegionRequest)
+
+UnsubscribeSpectatorFromRegionResponse = _reflection.GeneratedProtocolMessageType('UnsubscribeSpectatorFromRegionResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UNSUBSCRIBESPECTATORFROMREGIONRESPONSE,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.UnsubscribeSpectatorFromRegionResponse)
+  ))
+_sym_db.RegisterMessage(UnsubscribeSpectatorFromRegionResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -920,8 +1187,8 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1198,
-  serialized_end=1953,
+  serialized_start=1567,
+  serialized_end=2590,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateAgent',
@@ -933,13 +1200,13 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\002\016\"\t/v1/agent:\001*'),
   ),
   _descriptor.MethodDescriptor(
-    name='GetAgent',
-    full_name='v1.SimulationService.GetAgent',
+    name='GetEntity',
+    full_name='v1.SimulationService.GetEntity',
     index=1,
     containing_service=None,
-    input_type=_GETAGENTREQUEST,
-    output_type=_GETAGENTRESPONSE,
-    serialized_options=_b('\202\323\344\223\002\020\022\016/v1/agent/{id}'),
+    input_type=_GETENTITYREQUEST,
+    output_type=_GETENTITYRESPONSE,
+    serialized_options=_b('\202\323\344\223\002\021\022\017/v1/entity/{id}'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteAgent',
@@ -974,7 +1241,7 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
     index=5,
     containing_service=None,
     input_type=_CREATESPECTATORREQUEST,
-    output_type=_CELLUPDATE,
+    output_type=_SPECTATERESPONSE,
     serialized_options=_b('\202\323\344\223\002\017\022\r/v1/spectator'),
   ),
   _descriptor.MethodDescriptor(
@@ -985,6 +1252,24 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_SUBSCRIBESPECTATORTOREGIONREQUEST,
     output_type=_SUBSCRIBESPECTATORTOREGIONRESPONSE,
     serialized_options=_b('\202\323\344\223\002)\032$/v1/spectator/{id}/subscribeToRegion:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='UnsubscribeSpectatorFromRegion',
+    full_name='v1.SimulationService.UnsubscribeSpectatorFromRegion',
+    index=7,
+    containing_service=None,
+    input_type=_UNSUBSCRIBESPECTATORFROMREGIONREQUEST,
+    output_type=_UNSUBSCRIBESPECTATORFROMREGIONRESPONSE,
+    serialized_options=_b('\202\323\344\223\002-\032(/v1/spectator/{id}/unsubscribeFromRegion:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='ResetWorld',
+    full_name='v1.SimulationService.ResetWorld',
+    index=8,
+    containing_service=None,
+    input_type=_RESETWORLDREQUEST,
+    output_type=_RESETWORLDRESPONSE,
+    serialized_options=_b('\202\323\344\223\002\016\032\t/v1/reset:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SIMULATIONSERVICE)

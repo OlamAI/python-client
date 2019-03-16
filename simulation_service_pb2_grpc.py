@@ -19,10 +19,10 @@ class SimulationServiceStub(object):
         request_serializer=simulation__service__pb2.CreateAgentRequest.SerializeToString,
         response_deserializer=simulation__service__pb2.CreateAgentResponse.FromString,
         )
-    self.GetAgent = channel.unary_unary(
-        '/v1.SimulationService/GetAgent',
-        request_serializer=simulation__service__pb2.GetAgentRequest.SerializeToString,
-        response_deserializer=simulation__service__pb2.GetAgentResponse.FromString,
+    self.GetEntity = channel.unary_unary(
+        '/v1.SimulationService/GetEntity',
+        request_serializer=simulation__service__pb2.GetEntityRequest.SerializeToString,
+        response_deserializer=simulation__service__pb2.GetEntityResponse.FromString,
         )
     self.DeleteAgent = channel.unary_unary(
         '/v1.SimulationService/DeleteAgent',
@@ -42,12 +42,22 @@ class SimulationServiceStub(object):
     self.CreateSpectator = channel.unary_stream(
         '/v1.SimulationService/CreateSpectator',
         request_serializer=simulation__service__pb2.CreateSpectatorRequest.SerializeToString,
-        response_deserializer=simulation__service__pb2.CellUpdate.FromString,
+        response_deserializer=simulation__service__pb2.SpectateResponse.FromString,
         )
     self.SubscribeSpectatorToRegion = channel.unary_unary(
         '/v1.SimulationService/SubscribeSpectatorToRegion',
         request_serializer=simulation__service__pb2.SubscribeSpectatorToRegionRequest.SerializeToString,
         response_deserializer=simulation__service__pb2.SubscribeSpectatorToRegionResponse.FromString,
+        )
+    self.UnsubscribeSpectatorFromRegion = channel.unary_unary(
+        '/v1.SimulationService/UnsubscribeSpectatorFromRegion',
+        request_serializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionRequest.SerializeToString,
+        response_deserializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionResponse.FromString,
+        )
+    self.ResetWorld = channel.unary_unary(
+        '/v1.SimulationService/ResetWorld',
+        request_serializer=simulation__service__pb2.ResetWorldRequest.SerializeToString,
+        response_deserializer=simulation__service__pb2.ResetWorldResponse.FromString,
         )
 
 
@@ -62,8 +72,8 @@ class SimulationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetAgent(self, request, context):
-    """Get data for an agent
+  def GetEntity(self, request, context):
+    """Get data for an entity
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -104,6 +114,20 @@ class SimulationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UnsubscribeSpectatorFromRegion(self, request, context):
+    """Subscribe the spectator of given id to a region
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ResetWorld(self, request, context):
+    """Reset the world
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_SimulationServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -112,10 +136,10 @@ def add_SimulationServiceServicer_to_server(servicer, server):
           request_deserializer=simulation__service__pb2.CreateAgentRequest.FromString,
           response_serializer=simulation__service__pb2.CreateAgentResponse.SerializeToString,
       ),
-      'GetAgent': grpc.unary_unary_rpc_method_handler(
-          servicer.GetAgent,
-          request_deserializer=simulation__service__pb2.GetAgentRequest.FromString,
-          response_serializer=simulation__service__pb2.GetAgentResponse.SerializeToString,
+      'GetEntity': grpc.unary_unary_rpc_method_handler(
+          servicer.GetEntity,
+          request_deserializer=simulation__service__pb2.GetEntityRequest.FromString,
+          response_serializer=simulation__service__pb2.GetEntityResponse.SerializeToString,
       ),
       'DeleteAgent': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteAgent,
@@ -135,12 +159,22 @@ def add_SimulationServiceServicer_to_server(servicer, server):
       'CreateSpectator': grpc.unary_stream_rpc_method_handler(
           servicer.CreateSpectator,
           request_deserializer=simulation__service__pb2.CreateSpectatorRequest.FromString,
-          response_serializer=simulation__service__pb2.CellUpdate.SerializeToString,
+          response_serializer=simulation__service__pb2.SpectateResponse.SerializeToString,
       ),
       'SubscribeSpectatorToRegion': grpc.unary_unary_rpc_method_handler(
           servicer.SubscribeSpectatorToRegion,
           request_deserializer=simulation__service__pb2.SubscribeSpectatorToRegionRequest.FromString,
           response_serializer=simulation__service__pb2.SubscribeSpectatorToRegionResponse.SerializeToString,
+      ),
+      'UnsubscribeSpectatorFromRegion': grpc.unary_unary_rpc_method_handler(
+          servicer.UnsubscribeSpectatorFromRegion,
+          request_deserializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionRequest.FromString,
+          response_serializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionResponse.SerializeToString,
+      ),
+      'ResetWorld': grpc.unary_unary_rpc_method_handler(
+          servicer.ResetWorld,
+          request_deserializer=simulation__service__pb2.ResetWorldRequest.FromString,
+          response_serializer=simulation__service__pb2.ResetWorldResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
