@@ -39,6 +39,11 @@ class SimulationServiceStub(object):
         request_serializer=simulation__service__pb2.GetAgentObservationRequest.SerializeToString,
         response_deserializer=simulation__service__pb2.GetAgentObservationResponse.FromString,
         )
+    self.ResetWorld = channel.unary_unary(
+        '/v1.SimulationService/ResetWorld',
+        request_serializer=simulation__service__pb2.ResetWorldRequest.SerializeToString,
+        response_deserializer=simulation__service__pb2.ResetWorldResponse.FromString,
+        )
     self.CreateSpectator = channel.unary_stream(
         '/v1.SimulationService/CreateSpectator',
         request_serializer=simulation__service__pb2.CreateSpectatorRequest.SerializeToString,
@@ -54,10 +59,10 @@ class SimulationServiceStub(object):
         request_serializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionRequest.SerializeToString,
         response_deserializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionResponse.FromString,
         )
-    self.ResetWorld = channel.unary_unary(
-        '/v1.SimulationService/ResetWorld',
-        request_serializer=simulation__service__pb2.ResetWorldRequest.SerializeToString,
-        response_deserializer=simulation__service__pb2.ResetWorldResponse.FromString,
+    self.CreateRemoteModel = channel.unary_stream(
+        '/v1.SimulationService/CreateRemoteModel',
+        request_serializer=simulation__service__pb2.CreateRemoteModelRequest.SerializeToString,
+        response_deserializer=simulation__service__pb2.Observation.FromString,
         )
 
 
@@ -100,6 +105,13 @@ class SimulationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ResetWorld(self, request, context):
+    """Reset the world
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateSpectator(self, request, context):
     """Create a new spectator stream
     """
@@ -121,8 +133,10 @@ class SimulationServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ResetWorld(self, request, context):
-    """Reset the world
+  def CreateRemoteModel(self, request, context):
+    """Create a remote model
+    Receives Agent Action Execution requests
+    Returns observations
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -156,6 +170,11 @@ def add_SimulationServiceServicer_to_server(servicer, server):
           request_deserializer=simulation__service__pb2.GetAgentObservationRequest.FromString,
           response_serializer=simulation__service__pb2.GetAgentObservationResponse.SerializeToString,
       ),
+      'ResetWorld': grpc.unary_unary_rpc_method_handler(
+          servicer.ResetWorld,
+          request_deserializer=simulation__service__pb2.ResetWorldRequest.FromString,
+          response_serializer=simulation__service__pb2.ResetWorldResponse.SerializeToString,
+      ),
       'CreateSpectator': grpc.unary_stream_rpc_method_handler(
           servicer.CreateSpectator,
           request_deserializer=simulation__service__pb2.CreateSpectatorRequest.FromString,
@@ -171,10 +190,10 @@ def add_SimulationServiceServicer_to_server(servicer, server):
           request_deserializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionRequest.FromString,
           response_serializer=simulation__service__pb2.UnsubscribeSpectatorFromRegionResponse.SerializeToString,
       ),
-      'ResetWorld': grpc.unary_unary_rpc_method_handler(
-          servicer.ResetWorld,
-          request_deserializer=simulation__service__pb2.ResetWorldRequest.FromString,
-          response_serializer=simulation__service__pb2.ResetWorldResponse.SerializeToString,
+      'CreateRemoteModel': grpc.unary_stream_rpc_method_handler(
+          servicer.CreateRemoteModel,
+          request_deserializer=simulation__service__pb2.CreateRemoteModelRequest.FromString,
+          response_serializer=simulation__service__pb2.Observation.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

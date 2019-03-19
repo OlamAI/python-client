@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='v1',
   syntax='proto3',
   serialized_options=_b('\222A\325\001\022o\n\022Simulation service\"T\n\022simulation project\022$https://github.com/olamai/simulation\032\030zacharyholland@gmail.com2\0031.0*\001\0012\020application/json:\020application/jsonR;\n\003404\0224\n*Returned when the resource does not exist.\022\006\n\004\232\002\001\007'),
-  serialized_pb=_b('\n\x18simulation-service.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\"#\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05\x63lass\x18\x04 \x01(\t\"\'\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdirection\x18\x02 \x01(\t\"K\n\x0bObservation\x12\r\n\x05\x63\x65lls\x18\x01 \x03(\t\x12\r\n\x05\x61live\x18\x02 \x01(\x08\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x05\x12\x0e\n\x06health\x18\x04 \x01(\x05\">\n\nCellUpdate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x1a\n\x06\x65ntity\x18\x04 \x01(\x0b\x32\n.v1.Entity\"\x1e\n\x0cServerAction\x12\x0e\n\x06\x61\x63tion\x18\x01 \x01(\t\"j\n\x10SpectateResponse\x12$\n\ncellUpdate\x18\x01 \x01(\x0b\x32\x0e.v1.CellUpdateH\x00\x12(\n\x0cserverAction\x18\x02 \x01(\x0b\x32\x10.v1.ServerActionH\x00\x42\x06\n\x04\x64\x61ta\"\x1e\n\x06Region\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"7\n\x12\x43reateAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\".\n\x13\x43reateAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"-\n\x12\x44\x65leteAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"3\n\x13\x44\x65leteAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x02 \x01(\x03\"P\n\x19\x45xecuteAgentActionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\x12\x1a\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\n.v1.Action\"a\n\x1a\x45xecuteAgentActionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x19\n\x11isAgentStillAlive\x18\x02 \x01(\x08\x12\x1b\n\x13wasActionSuccessful\x18\x03 \x01(\x08\"5\n\x1aGetAgentObservationRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"P\n\x1bGetAgentObservationResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12$\n\x0bobservation\x18\x02 \x01(\x0b\x32\x0f.v1.Observation\" \n\x11ResetWorldRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\"\x14\n\x12ResetWorldResponse\"+\n\x10GetEntityRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"<\n\x11GetEntityResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x1a\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\n.v1.Entity\"1\n\x16\x43reateSpectatorRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"X\n!SubscribeSpectatorToRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"E\n\"SubscribeSpectatorToRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\"\\\n%UnsubscribeSpectatorFromRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"I\n&UnsubscribeSpectatorFromRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\x32\xff\x07\n\x11SimulationService\x12T\n\x0b\x43reateAgent\x12\x16.v1.CreateAgentRequest\x1a\x17.v1.CreateAgentResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/agent:\x01*\x12Q\n\tGetEntity\x12\x14.v1.GetEntityRequest\x1a\x15.v1.GetEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/entity/{id}\x12V\n\x0b\x44\x65leteAgent\x12\x16.v1.DeleteAgentRequest\x1a\x17.v1.DeleteAgentResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/agent/{id}\x12n\n\x12\x45xecuteAgentAction\x12\x1d.v1.ExecuteAgentActionRequest\x1a\x1e.v1.ExecuteAgentActionResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/agent/{id}:\x01*\x12z\n\x13GetAgentObservation\x12\x1e.v1.GetAgentObservationRequest\x1a\x1f.v1.GetAgentObservationResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/agent/{id}/observation\x12\\\n\x0f\x43reateSpectator\x12\x1a.v1.CreateSpectatorRequest\x1a\x14.v1.SpectateResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/spectator0\x01\x12\x9c\x01\n\x1aSubscribeSpectatorToRegion\x12%.v1.SubscribeSpectatorToRegionRequest\x1a&.v1.SubscribeSpectatorToRegionResponse\"/\x82\xd3\xe4\x93\x02)\x1a$/v1/spectator/{id}/subscribeToRegion:\x01*\x12\xac\x01\n\x1eUnsubscribeSpectatorFromRegion\x12).v1.UnsubscribeSpectatorFromRegionRequest\x1a*.v1.UnsubscribeSpectatorFromRegionResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/spectator/{id}/unsubscribeFromRegion:\x01*\x12Q\n\nResetWorld\x12\x15.v1.ResetWorldRequest\x1a\x16.v1.ResetWorldResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x1a\t/v1/reset:\x01*B\xd9\x01\x92\x41\xd5\x01\x12o\n\x12Simulation service\"T\n\x12simulation project\x12$https://github.com/olamai/simulation\x1a\x18zacharyholland@gmail.com2\x03\x31.0*\x01\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07\x62\x06proto3')
+  serialized_pb=_b('\n\x18simulation-service.proto\x12\x02v1\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\"#\n\x06\x45ntity\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05\x63lass\x18\x04 \x01(\t\"\'\n\x06\x41\x63tion\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdirection\x18\x02 \x01(\t\"W\n\x0bObservation\x12\n\n\x02id\x18\x01 \x01(\x03\x12\r\n\x05\x63\x65lls\x18\x02 \x03(\t\x12\r\n\x05\x61live\x18\x03 \x01(\x08\x12\x0e\n\x06\x65nergy\x18\x04 \x01(\x05\x12\x0e\n\x06health\x18\x05 \x01(\x05\">\n\nCellUpdate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\x1a\n\x06\x65ntity\x18\x04 \x01(\x0b\x32\n.v1.Entity\"\x1e\n\x0cServerAction\x12\x0e\n\x06\x61\x63tion\x18\x01 \x01(\t\"j\n\x10SpectateResponse\x12$\n\ncellUpdate\x18\x01 \x01(\x0b\x32\x0e.v1.CellUpdateH\x00\x12(\n\x0cserverAction\x18\x02 \x01(\x0b\x32\x10.v1.ServerActionH\x00\x42\x06\n\x04\x64\x61ta\"\x1e\n\x06Region\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\"7\n\x12\x43reateAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\".\n\x13\x43reateAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"-\n\x12\x44\x65leteAgentRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"3\n\x13\x44\x65leteAgentResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x02 \x01(\x03\"P\n\x19\x45xecuteAgentActionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\x12\x1a\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\n.v1.Action\"a\n\x1a\x45xecuteAgentActionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x19\n\x11isAgentStillAlive\x18\x02 \x01(\x08\x12\x1b\n\x13wasActionSuccessful\x18\x03 \x01(\x08\"5\n\x1aGetAgentObservationRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"P\n\x1bGetAgentObservationResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12$\n\x0bobservation\x18\x02 \x01(\x0b\x32\x0f.v1.Observation\" \n\x11ResetWorldRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\"\x14\n\x12ResetWorldResponse\"+\n\x10GetEntityRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\x03\"<\n\x11GetEntityResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x1a\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\n.v1.Entity\"1\n\x16\x43reateSpectatorRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"X\n!SubscribeSpectatorToRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"E\n\"SubscribeSpectatorToRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\"\\\n%UnsubscribeSpectatorFromRegionRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x1a\n\x06region\x18\x03 \x01(\x0b\x32\n.v1.Region\"I\n&UnsubscribeSpectatorFromRegionResponse\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t\x12\x12\n\nsuccessful\x18\x02 \x01(\x08\"\'\n\x18\x43reateRemoteModelRequest\x12\x0b\n\x03\x61pi\x18\x01 \x01(\t2\xe4\x08\n\x11SimulationService\x12T\n\x0b\x43reateAgent\x12\x16.v1.CreateAgentRequest\x1a\x17.v1.CreateAgentResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/agent:\x01*\x12Q\n\tGetEntity\x12\x14.v1.GetEntityRequest\x1a\x15.v1.GetEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/entity/{id}\x12V\n\x0b\x44\x65leteAgent\x12\x16.v1.DeleteAgentRequest\x1a\x17.v1.DeleteAgentResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/agent/{id}\x12n\n\x12\x45xecuteAgentAction\x12\x1d.v1.ExecuteAgentActionRequest\x1a\x1e.v1.ExecuteAgentActionResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x1a\x0e/v1/agent/{id}:\x01*\x12z\n\x13GetAgentObservation\x12\x1e.v1.GetAgentObservationRequest\x1a\x1f.v1.GetAgentObservationResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/agent/{id}/observation\x12Q\n\nResetWorld\x12\x15.v1.ResetWorldRequest\x1a\x16.v1.ResetWorldResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x1a\t/v1/reset:\x01*\x12\\\n\x0f\x43reateSpectator\x12\x1a.v1.CreateSpectatorRequest\x1a\x14.v1.SpectateResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/spectator0\x01\x12\x9c\x01\n\x1aSubscribeSpectatorToRegion\x12%.v1.SubscribeSpectatorToRegionRequest\x1a&.v1.SubscribeSpectatorToRegionResponse\"/\x82\xd3\xe4\x93\x02)\x1a$/v1/spectator/{id}/subscribeToRegion:\x01*\x12\xac\x01\n\x1eUnsubscribeSpectatorFromRegion\x12).v1.UnsubscribeSpectatorFromRegionRequest\x1a*.v1.UnsubscribeSpectatorFromRegionResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/spectator/{id}/unsubscribeFromRegion:\x01*\x12\x63\n\x11\x43reateRemoteModel\x12\x1c.v1.CreateRemoteModelRequest\x1a\x0f.v1.Observation\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/createRemoteModel0\x01\x42\xd9\x01\x92\x41\xd5\x01\x12o\n\x12Simulation service\"T\n\x12simulation project\x12$https://github.com/olamai/simulation\x1a\x18zacharyholland@gmail.com2\x03\x31.0*\x01\x01\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07\x62\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -112,29 +112,36 @@ _OBSERVATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cells', full_name='v1.Observation.cells', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='alive', full_name='v1.Observation.alive', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='energy', full_name='v1.Observation.energy', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      name='id', full_name='v1.Observation.id', index=0,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='health', full_name='v1.Observation.health', index=3,
+      name='cells', full_name='v1.Observation.cells', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='alive', full_name='v1.Observation.alive', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='energy', full_name='v1.Observation.energy', index=3,
       number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='health', full_name='v1.Observation.health', index=4,
+      number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -152,7 +159,7 @@ _OBSERVATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=186,
-  serialized_end=261,
+  serialized_end=273,
 )
 
 
@@ -196,8 +203,8 @@ _CELLUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=263,
-  serialized_end=325,
+  serialized_start=275,
+  serialized_end=337,
 )
 
 
@@ -227,8 +234,8 @@ _SERVERACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=327,
-  serialized_end=357,
+  serialized_start=339,
+  serialized_end=369,
 )
 
 
@@ -268,8 +275,8 @@ _SPECTATERESPONSE = _descriptor.Descriptor(
       name='data', full_name='v1.SpectateResponse.data',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=359,
-  serialized_end=465,
+  serialized_start=371,
+  serialized_end=477,
 )
 
 
@@ -306,8 +313,8 @@ _REGION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=467,
-  serialized_end=497,
+  serialized_start=479,
+  serialized_end=509,
 )
 
 
@@ -351,8 +358,8 @@ _CREATEAGENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=499,
-  serialized_end=554,
+  serialized_start=511,
+  serialized_end=566,
 )
 
 
@@ -389,8 +396,8 @@ _CREATEAGENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=556,
-  serialized_end=602,
+  serialized_start=568,
+  serialized_end=614,
 )
 
 
@@ -427,8 +434,8 @@ _DELETEAGENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=604,
-  serialized_end=649,
+  serialized_start=616,
+  serialized_end=661,
 )
 
 
@@ -465,8 +472,8 @@ _DELETEAGENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=651,
-  serialized_end=702,
+  serialized_start=663,
+  serialized_end=714,
 )
 
 
@@ -510,8 +517,8 @@ _EXECUTEAGENTACTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=704,
-  serialized_end=784,
+  serialized_start=716,
+  serialized_end=796,
 )
 
 
@@ -555,8 +562,8 @@ _EXECUTEAGENTACTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=786,
-  serialized_end=883,
+  serialized_start=798,
+  serialized_end=895,
 )
 
 
@@ -593,8 +600,8 @@ _GETAGENTOBSERVATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=885,
-  serialized_end=938,
+  serialized_start=897,
+  serialized_end=950,
 )
 
 
@@ -631,8 +638,8 @@ _GETAGENTOBSERVATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=940,
-  serialized_end=1020,
+  serialized_start=952,
+  serialized_end=1032,
 )
 
 
@@ -662,8 +669,8 @@ _RESETWORLDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1054,
+  serialized_start=1034,
+  serialized_end=1066,
 )
 
 
@@ -686,8 +693,8 @@ _RESETWORLDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1056,
-  serialized_end=1076,
+  serialized_start=1068,
+  serialized_end=1088,
 )
 
 
@@ -724,8 +731,8 @@ _GETENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1078,
-  serialized_end=1121,
+  serialized_start=1090,
+  serialized_end=1133,
 )
 
 
@@ -762,8 +769,8 @@ _GETENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1123,
-  serialized_end=1183,
+  serialized_start=1135,
+  serialized_end=1195,
 )
 
 
@@ -800,8 +807,8 @@ _CREATESPECTATORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1185,
-  serialized_end=1234,
+  serialized_start=1197,
+  serialized_end=1246,
 )
 
 
@@ -845,8 +852,8 @@ _SUBSCRIBESPECTATORTOREGIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1324,
+  serialized_start=1248,
+  serialized_end=1336,
 )
 
 
@@ -883,8 +890,8 @@ _SUBSCRIBESPECTATORTOREGIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1326,
-  serialized_end=1395,
+  serialized_start=1338,
+  serialized_end=1407,
 )
 
 
@@ -928,8 +935,8 @@ _UNSUBSCRIBESPECTATORFROMREGIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1397,
-  serialized_end=1489,
+  serialized_start=1409,
+  serialized_end=1501,
 )
 
 
@@ -966,8 +973,39 @@ _UNSUBSCRIBESPECTATORFROMREGIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1491,
-  serialized_end=1564,
+  serialized_start=1503,
+  serialized_end=1576,
+)
+
+
+_CREATEREMOTEMODELREQUEST = _descriptor.Descriptor(
+  name='CreateRemoteModelRequest',
+  full_name='v1.CreateRemoteModelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api', full_name='v1.CreateRemoteModelRequest.api', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1578,
+  serialized_end=1617,
 )
 
 _CELLUPDATE.fields_by_name['entity'].message_type = _ENTITY
@@ -1008,6 +1046,7 @@ DESCRIPTOR.message_types_by_name['SubscribeSpectatorToRegionRequest'] = _SUBSCRI
 DESCRIPTOR.message_types_by_name['SubscribeSpectatorToRegionResponse'] = _SUBSCRIBESPECTATORTOREGIONRESPONSE
 DESCRIPTOR.message_types_by_name['UnsubscribeSpectatorFromRegionRequest'] = _UNSUBSCRIBESPECTATORFROMREGIONREQUEST
 DESCRIPTOR.message_types_by_name['UnsubscribeSpectatorFromRegionResponse'] = _UNSUBSCRIBESPECTATORFROMREGIONRESPONSE
+DESCRIPTOR.message_types_by_name['CreateRemoteModelRequest'] = _CREATEREMOTEMODELREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Entity = _reflection.GeneratedProtocolMessageType('Entity', (_message.Message,), dict(
@@ -1178,6 +1217,13 @@ UnsubscribeSpectatorFromRegionResponse = _reflection.GeneratedProtocolMessageTyp
   ))
 _sym_db.RegisterMessage(UnsubscribeSpectatorFromRegionResponse)
 
+CreateRemoteModelRequest = _reflection.GeneratedProtocolMessageType('CreateRemoteModelRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEREMOTEMODELREQUEST,
+  __module__ = 'simulation_service_pb2'
+  # @@protoc_insertion_point(class_scope:v1.CreateRemoteModelRequest)
+  ))
+_sym_db.RegisterMessage(CreateRemoteModelRequest)
+
 
 DESCRIPTOR._options = None
 
@@ -1187,8 +1233,8 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1567,
-  serialized_end=2590,
+  serialized_start=1620,
+  serialized_end=2744,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateAgent',
@@ -1236,9 +1282,18 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\002\034\022\032/v1/agent/{id}/observation'),
   ),
   _descriptor.MethodDescriptor(
+    name='ResetWorld',
+    full_name='v1.SimulationService.ResetWorld',
+    index=5,
+    containing_service=None,
+    input_type=_RESETWORLDREQUEST,
+    output_type=_RESETWORLDRESPONSE,
+    serialized_options=_b('\202\323\344\223\002\016\032\t/v1/reset:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
     name='CreateSpectator',
     full_name='v1.SimulationService.CreateSpectator',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=_CREATESPECTATORREQUEST,
     output_type=_SPECTATERESPONSE,
@@ -1247,7 +1302,7 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SubscribeSpectatorToRegion',
     full_name='v1.SimulationService.SubscribeSpectatorToRegion',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=_SUBSCRIBESPECTATORTOREGIONREQUEST,
     output_type=_SUBSCRIBESPECTATORTOREGIONRESPONSE,
@@ -1256,20 +1311,20 @@ _SIMULATIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UnsubscribeSpectatorFromRegion',
     full_name='v1.SimulationService.UnsubscribeSpectatorFromRegion',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=_UNSUBSCRIBESPECTATORFROMREGIONREQUEST,
     output_type=_UNSUBSCRIBESPECTATORFROMREGIONRESPONSE,
     serialized_options=_b('\202\323\344\223\002-\032(/v1/spectator/{id}/unsubscribeFromRegion:\001*'),
   ),
   _descriptor.MethodDescriptor(
-    name='ResetWorld',
-    full_name='v1.SimulationService.ResetWorld',
-    index=8,
+    name='CreateRemoteModel',
+    full_name='v1.SimulationService.CreateRemoteModel',
+    index=9,
     containing_service=None,
-    input_type=_RESETWORLDREQUEST,
-    output_type=_RESETWORLDRESPONSE,
-    serialized_options=_b('\202\323\344\223\002\016\032\t/v1/reset:\001*'),
+    input_type=_CREATEREMOTEMODELREQUEST,
+    output_type=_OBSERVATION,
+    serialized_options=_b('\202\323\344\223\002\027\022\025/v1/createRemoteModel'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SIMULATIONSERVICE)
