@@ -1,3 +1,5 @@
 server-cert.pem
 server-key.pem
 /tmp
+.DS_Store
+TESTING*
