@@ -15,27 +15,22 @@ def defaultModelFunc(obsv):
 # Create an iterator to let us send a stream
 class MySmarterRequestIterator(object):
   def __init__(self):
-      self._responses = []
+      self._request = None
 
   def __iter__(self):
       return self
 
   def _next(self):
-    # Acquire the lock
-    print("-Next lock aquire-")
+    # Block until we get the lock, then return the request
     self._lock.acquire()
-    response = self._responses.pop(0)
-    return response
+    return self._request
 
   def __next__(self):  # Python 3
-      return self._next()
+    return self._next()
 
-  def add_response(self, response):
-      print("Adding a response...")
-      # with self._lock:
-      print("Got lock...")
-      self._responses.append(response)
-      print("Response added!")
+  def set_request(self, request):
+    self._request = request
+
   def set_lock(self, lock):
     self._lock = lock
   
@@ -53,23 +48,23 @@ def connectRemoteModel(secret, modelName, modelFunc, addr=PROD_SERVER_ADDR):
   requestItt.set_lock(lock)
   # Connect
   responses = stub.ConnectRemoteModel(requestItt, metadata=metadata)
-  t1 = time.time()*1000.0
+  # Try/catch cleanup for Notebook
   try:
       for response in responses:
-        t2 = time.time()*1000.0
-        diff = t2 - t1
-        t1 = t2
-        print("Packet delta: ", diff)
-        # actionPacket = modelFunc(response)
-        actions = [collective_pb2.Action(id="0", action=0, direction=0)]
+        # Create the request
+        actions = []
+        for obsv in response.observations:
+          actions.append(modelFunc(obsv))
         actionPacket = collective_pb2.ActionPacket(actions=actions)
-        requestItt.add_response(actionPacket)
+        # Set the request to the iterator
+        requestItt.set_request(actionPacket)
+        # Release lock so the iterator can make a passthrough
         lock.release()
-  #     for obsvPacket in stub.CreateRemoteModel(metadata=metadata):
-  #         action = 0
-  #         direction = 0
-  #         print("Performing action: ", action, " in direction: ", direction)
-  #         actionRes = stub.ExecuteAgentAction(v1.ExecuteAgentActionRequest(api=api, id=obsv.entity.id, action=action, direction=direction), metadata=metadata)
   except KeyboardInterrupt:
+    # Release lock
     lock.release()
+    # Send cancel to the server
     responses.cancel()
+
+def createAction(id, action, direction):
+  return collective_pb2.Action(id=id, action=action, direction=direction)
