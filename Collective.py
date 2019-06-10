@@ -8,7 +8,6 @@ import collective_pb2_grpc
 
 
 PROD_SERVER_ADDR = "" # TODO
-lock = threading.Lock()
 
 def defaultModelFunc(obsv):
   raise Exception('You need to pass in a model function.')
@@ -23,7 +22,8 @@ class MySmarterRequestIterator(object):
 
   def _next(self):
     # Acquire the lock
-    lock.acquire()
+    print("-Next lock aquire-")
+    self._lock.acquire()
     response = self._responses.pop(0)
     return response
 
@@ -36,6 +36,8 @@ class MySmarterRequestIterator(object):
       print("Got lock...")
       self._responses.append(response)
       print("Response added!")
+  def set_lock(self, lock):
+    self._lock = lock
   
 
 def connectRemoteModel(secret, modelName, modelFunc, addr=PROD_SERVER_ADDR):
@@ -43,12 +45,15 @@ def connectRemoteModel(secret, modelName, modelFunc, addr=PROD_SERVER_ADDR):
   channel = grpc.insecure_channel(addr)
   stub = collective_pb2_grpc.CollectiveStub(channel)
   metadata = [('auth-secret', secret), ('model-name', modelName)]
-
+  # Create and acquire the lock
+  lock = threading.Lock()
+  lock.acquire()
+  # Create the iterator
   requestItt = MySmarterRequestIterator()
-
+  requestItt.set_lock(lock)
+  # Connect
   responses = stub.ConnectRemoteModel(requestItt, metadata=metadata)
   t1 = time.time()*1000.0
-  lock.acquire()
   try:
       for response in responses:
         t2 = time.time()*1000.0
@@ -66,4 +71,5 @@ def connectRemoteModel(secret, modelName, modelFunc, addr=PROD_SERVER_ADDR):
   #         print("Performing action: ", action, " in direction: ", direction)
   #         actionRes = stub.ExecuteAgentAction(v1.ExecuteAgentActionRequest(api=api, id=obsv.entity.id, action=action, direction=direction), metadata=metadata)
   except KeyboardInterrupt:
-      responses.cancel()
+    lock.release()
+    responses.cancel()
