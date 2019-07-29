@@ -35,11 +35,11 @@ class MySmarterRequestIterator(object):
     self._lock = lock
   
 
-def connectRemoteModel(secret, modelName, modelFunc, addr=PROD_SERVER_ADDR):
+def connectRemoteModel(secret, modelFunc, addr=PROD_SERVER_ADDR):
   # Create the stub
   channel = grpc.insecure_channel(addr)
   stub = collective_pb2_grpc.CollectiveStub(channel)
-  metadata = [('auth-secret', secret), ('model-name', modelName)]
+  metadata = [('model-secret', secret)]
   # Create and acquire the lock
   lock = threading.Lock()
   lock.acquire()
